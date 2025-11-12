@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+:root {
+    color-scheme: dark;
+}
+
+:root,
+body {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(5 6 9);
+    color: rgb(244 244 245);
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background-color: rgb(59 130 246 / 0.3);
+    color: inherit;
+}

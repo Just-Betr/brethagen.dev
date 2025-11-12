@@ -30,8 +30,8 @@ export const contactChannels: ContactChannel[] = [
     },
     {
         label: 'GitHub',
-        value: 'github.com/JustBetr',
-        href: 'https://github.com/JustBetr',
+        value: 'github.com/Just-Betr',
+        href: 'https://github.com/Just-Betr',
         icon: 'github',
         accent: 'violet'
     }

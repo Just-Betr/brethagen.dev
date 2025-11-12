@@ -171,23 +171,23 @@
 	</div>
 
 	<div
-		class="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-4 py-16 sm:px-6 lg:px-8"
+		class="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8"
 	>
 		<div
-			class="w-full rounded-3xl border border-white/10 bg-neutral-900/70 shadow-[0_40px_120px_-45px_rgba(16,185,129,0.45)] backdrop-blur-xl"
+			class="w-full rounded-2xl border border-white/10 bg-neutral-900/70 shadow-[0_40px_120px_-45px_rgba(16,185,129,0.45)] backdrop-blur-xl sm:rounded-3xl"
 		>
-			<div class="flex items-center gap-3 border-b border-white/10 px-6 py-4">
+			<div class="flex flex-wrap items-center gap-3 border-b border-white/10 px-6 py-4">
 				<div class="flex items-center gap-2">
 					<span class="inline-flex h-3 w-3 rounded-full bg-rose-400"></span>
 					<span class="inline-flex h-3 w-3 rounded-full bg-amber-400"></span>
 					<span class="inline-flex h-3 w-3 rounded-full bg-emerald-400"></span>
 				</div>
-				<span class="text-xs tracking-[0.3em] text-white/50 uppercase">
+				<span class="text-[0.65rem] tracking-[0.3em] text-white/50 uppercase sm:text-xs">
 					{prompt.user}@{prompt.host}
 				</span>
 			</div>
 
-			<div class="flex flex-col px-6 py-6 sm:px-8 sm:py-8">
+			<div class="flex flex-col px-4 py-6 sm:px-8 sm:py-8">
 				<div class="mb-6 space-y-2 text-sm text-white/50 sm:text-base">
 					<p class="font-medium text-white/70">
 						{isBooting ? 'Initializing session…' : 'Terminal ready.'}
@@ -223,7 +223,7 @@
 				<div class="relative">
 					<div
 						bind:this={logContainer}
-						class="max-h-[28rem] space-y-5 overflow-y-auto pr-1 text-sm leading-relaxed sm:text-base"
+						class="max-h-[65vh] space-y-5 overflow-y-auto pr-1 text-sm leading-relaxed sm:max-h-[28rem] sm:text-base"
 					>
 						{#if isBooting && entries.length === 0}
 							<div class="space-y-4">
@@ -337,10 +337,10 @@
 				</div>
 
 				<form
-					class="mt-6 flex items-center gap-3 text-sm sm:text-base"
+					class="mt-6 flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:gap-4 sm:text-base"
 					on:submit|preventDefault={handleSubmit}
 				>
-					<div class="flex items-center gap-2 text-sm sm:text-base">
+					<div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
 						<span class="text-sky-300">{prompt.user}@{prompt.host}</span>
 						<span class="text-white/30">{prompt.path}</span>
 						<span class="text-emerald-300">$</span>
@@ -352,7 +352,7 @@
 						autocorrect="off"
 						autocapitalize="none"
 						spellcheck={false}
-						class="flex-1 bg-transparent text-white placeholder:text-white/30 focus:outline-none"
+						class="w-full min-w-0 flex-1 bg-transparent text-white placeholder:text-white/30 focus:outline-none"
 						on:keydown={handleKeydown}
 						placeholder={isBooting ? 'Preparing prompt…' : 'Type a command and press Enter'}
 						disabled={isBooting}
